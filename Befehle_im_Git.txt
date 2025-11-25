@@ -1,0 +1,26 @@
+status: gibt Status aus
+
+git add <file / directory>: fügt File / Ordner zu staging area
+
+git log: gibt Log aus
+	--oneline: gibt kurzen Log aus
+	-p gibt goßen Log aus
+
+git git commit: übergibt Änderungen in den Repository
+		-m "<Beschreibung>": direkt mit Beschreibung übergeben
+
+git reset: löscht aus staging area die Änderungen
+	   <HASH> löscht Änderungen in Repository neuste Änderungen bis zu diesem HASH
+	   --hard löscht Änderungen sowol in staging area / repository als auch im workingdirectory
+
+git stash: speichert aktuellen Snapshot von Working directory und  Stage area als Stack
+	  -pop: stellt zuletzt gespeicherten Stash wieder her
+
+git revers <HASH>: macht Änderungen für diesen Commit rückgängig
+
+git rm <Dateiname>: löscht Datei mit log im Git
+
+git mv <datei1> <datei2>: benennt datei1 nach datei2 um
+
+git blame <filename>: zeigt Zeile für Zeile an, in welchem Commit diese zuletzt geändert wurde.
+	  --color-lines <filename>: gleiche Commits farblich hervorheben
