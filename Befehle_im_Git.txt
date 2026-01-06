@@ -1,0 +1,80 @@
+status: gibt Status aus
+
+git add <file / directory>: fügt File / Ordner zu staging area
+
+git log: gibt Log aus
+	--oneline: gibt kurzen Log aus
+	-p gibt goßen Log aus
+	--graph: gibt Graph aus
+	--branches: gibt Log mit allen Branchen aus
+
+git git commit: übergibt Änderungen in den Repository
+		-m "<Beschreibung>": direkt mit Beschreibung übergeben
+
+git reset: löscht aus staging area die Änderungen
+	   <HASH> löscht Änderungen in Repository neuste Änderungen bis zu diesem HASH
+	   --hard löscht Änderungen sowol in staging area / repository als auch im workingdirectory
+
+git stash: speichert aktuellen Snapshot von Working directory und  Stage area als Stack
+	  -pop: stellt zuletzt gespeicherten Stash wieder her
+
+git revers <HASH>: macht Änderungen für diesen Commit rückgängig
+
+git rm <Dateiname>: löscht Datei mit log im Git
+
+git mv <datei1> <datei2>: benennt datei1 nach datei2 um
+
+git blame <filename>: zeigt Zeile für Zeile an, in welchem Commit diese zuletzt geändert wurde.
+	  --color-lines <filename>: gleiche Commits farblich hervorheben
+
+git branch: zeigt alle vorhandenen Branches an
+
+git banch <branch name>: legt einen neuen branch an
+
+git checkout <branch name>: wechselt zu einem Branch
+			<tag>: wechselt zu Commit mit diesem Tag
+
+
+#Shortcut:
+git checkout -b <branch name>: legt einen neuen Branch an und wechselt direkt dorthin
+
+git merge <branch>: Versucht den Branch <branch> mit dem ktuellen Branch zusammenzuführen (zu "mergen").
+
+	--no-off: verhindert, dass git einen fast-forward-Merge durchfuührt. Es wird also immer ein Merge-Commit erstellt.
+	--ff-only: erzwingt einen fast-forward-Merge.
+
+	Good Practice:
+	git checkout main --> gehe zu main-Branch
+	git merge <branch> --> führe die Branche zusammen
+	git branch -d <branch> --> löche den parallelen branch
+
+git rebase <branch name> baut die Commit-Historie basierend auf einem anderen Branch auf
+
+git tag: alle bestehenden Tags anzeigen
+		-a v<x.y>: einen neuen Tag für Version x.y erstellen
+
+git bisect start: problemm-Commit finden
+			bad [commit-id]: setze diesen Commit als schlecht
+			good [commit-id]: setze diesen Commit als gut
+			reset: starte neu?
+
+git schow [commit-id]
+git diff <commit1> <commti2>: zeigt unterschiede in diesen Commits
+
+===============================================================================================
+                             Online Repositories
+===============================================================================================
+
+git clone <url>: erstellt eine lokale Kopie des master-Branches eines Repositoryes
+
+git remote -v: zeigt an, welche remote Repositories getrackt werden
+		   -vv: zeigt es ausführlich
+			remove origin: Verbindung zu remote Repository trennen
+
+git fetch: lädt Commits und Branches von einem remote Repository herunter
+
+git log origin/<branch>
+git merge origin/<branch>
+
+git branch --vv: eine ausführliche Branch-ausgabe
+git branch --vv --remote: zeigt auch Branches von Online-Repository
